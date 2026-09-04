@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A beginner-friendly keyword-based AI sentiment analyzer student project.">
+  <title>AI Sentiment Analyzer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="page-shell">
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-label="AI Sentiment Analyzer home">
+        <span class="brand-mark" aria-hidden="true">✦</span>
+        <span>AI Sentiment<br><strong>Analyzer</strong></span>
+      </a>
+      <div class="header-badge"><span class="status-dot"></span> Beginner AI project</div>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="page-title">
+        <div class="hero-copy">
+          <p class="eyebrow">INTRODUCTION TO ARTIFICIAL INTELLIGENCE</p>
+          <h1>Give your words<br><span>a feeling.</span></h1>
+          <p class="hero-description">Explore how a simple AI model reads language and recognizes the mood behind a sentence.</p>
+        </div>
+        <div class="hero-orbit" aria-hidden="true">
+          <div class="orbit-ring ring-one"></div>
+          <div class="orbit-ring ring-two"></div>
+          <div class="orbit-core">AI</div>
+          <span class="orbit-node node-one">+</span>
+          <span class="orbit-node node-two">−</span>
+          <span class="orbit-node node-three">?</span>
+        </div>
+      </section>
+
+      <section class="analyzer-layout" aria-label="Sentiment analyzer">
+        <div class="panel input-panel">
+          <div class="panel-heading">
+            <div>
+              <p class="section-kicker">01 / INPUT</p>
+              <h2>What are you thinking?</h2>
+            </div>
+            <span class="step-number">01</span>
+          </div>
+          <label for="sentence-input">Type a sentence to analyze</label>
+          <textarea id="sentence-input" rows="6" maxlength="280" placeholder="For example: I really enjoyed this wonderful experience."></textarea>
+          <div class="input-meta">
+            <span id="input-message" class="input-message" role="status"></span>
+            <span id="character-count">0 / 280</span>
+          </div>
+          <button id="analyze-button" class="primary-button" type="button">
+            <span>Analyze sentiment</span>
+            <span class="button-arrow" aria-hidden="true">↗</span>
+          </button>
+
+          <div class="examples-block">
+            <p class="examples-label">Try an example</p>
+            <div class="example-list">
+              <button class="example-chip" type="button" data-example="I love how helpful and friendly this app is!">I love this app!</button>
+              <button class="example-chip" type="button" data-example="The service was slow, disappointing, and frustrating.">A frustrating service</button>
+              <button class="example-chip" type="button" data-example="The meeting is scheduled for Tuesday afternoon.">A neutral update</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel result-panel" aria-live="polite">
+          <div class="panel-heading">
+            <div>
+              <p class="section-kicker">02 / RESULT</p>
+              <h2>Sentiment reading</h2>
+            </div>
+            <span class="pulse-icon" aria-hidden="true"></span>
+          </div>
+          <div id="result-content" class="result-content is-empty">
+            <div id="sentiment-icon" class="sentiment-icon" aria-hidden="true">◌</div>
+            <p id="sentiment-label" class="sentiment-label">Awaiting your sentence</p>
+            <p id="sentiment-description" class="result-description">Your result will appear here after you run the analysis.</p>
+          </div>
+          <div class="score-grid">
+            <div class="score-item positive-score">
+              <div class="score-label"><span class="score-dot"></span> Positive score</div>
+              <strong id="positive-score">0</strong>
+            </div>
+            <div class="score-item negative-score">
+              <div class="score-label"><span class="score-dot"></span> Negative score</div>
+              <strong id="negative-score">0</strong>
+            </div>
+          </div>
+          <div class="matched-words">
+            <span>Words detected</span>
+            <p id="matched-words-list">No words analyzed yet.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="how-it-works" aria-labelledby="how-title">
+        <div class="how-heading">
+          <p class="section-kicker">03 / THE IDEA</p>
+          <h2 id="how-title">How it works</h2>
+          <p>This mini AI model uses a transparent approach, so you can see exactly how it makes a prediction.</p>
+        </div>
+        <div class="process-steps">
+          <article class="process-step">
+            <span class="process-number">01</span>
+            <h3>Read the text</h3>
+            <p>Your sentence is split into individual words and converted to lowercase.</p>
+          </article>
+          <article class="process-step">
+            <span class="process-number">02</span>
+            <h3>Find signals</h3>
+            <p>Each word is compared with a list of words that express positive or negative feelings.</p>
+          </article>
+          <article class="process-step">
+            <span class="process-number">03</span>
+            <h3>Compare scores</h3>
+            <p>The larger score wins. If both scores match, the sentence is classified as neutral.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>Introduction to Artificial Intelligence — Student Project</span>
+      <span class="footer-mark">Built with curiosity <span aria-hidden="true">✦</span></span>
+    </footer>
+  </div>
+</body>
+</html>
